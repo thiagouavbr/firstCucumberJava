@@ -31,7 +31,7 @@ public class Consulta {
 	
 	@After 
 	public void finalizar() {	
-		//driver.quit();
+		driver.quit();
 	}
 	
 	@Dado("^que o usuario acessa o site da Iterasys$")
