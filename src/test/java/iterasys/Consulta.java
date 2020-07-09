@@ -37,7 +37,6 @@ public class Consulta {
 	@Dado("^que o usuario acessa o site da Iterasys$")
 	public void que_o_usuario_acessa_o_site_da_Iterasys() throws Throwable {
 		driver.get(url);
-
 	}
 
 	@Quando("^realizo uma busca por \"([^\"]*)\"$")
@@ -49,8 +48,7 @@ public class Consulta {
 
 	@Entao("^exibe um conjunto de cursos$")
 	public void exibe_um_conjunto_de_cursos() throws Throwable {
-		System.out.print(driver.findElements(By.xpath("li")));;
-		
+		System.out.print(driver.findElements(By.xpath("//*[@id=\"all_courses_search\"]/li")));
 		
 	}
 
@@ -62,10 +60,8 @@ public class Consulta {
 	@Entao("^valido que a duracao do curso sera de \"([^\"]*)\"$")
 	public void valido_que_a_duracao_do_curso_sera_de_horas(String horas) throws Throwable {
 		String meuElemento = driver.findElement(By.cssSelector("li.carga-horaria")).getText();
-		System.out.println(meuElemento);
-		assertEquals(horas, meuElemento);
-		
-		//System.out.print(collator.compare (horas, meuElemento));
+		//System.out.println(horas+meuElemento);
+		assertEquals("060 Horas de duração", meuElemento);
 	}
 	
 
